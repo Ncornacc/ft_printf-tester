@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 08:19:11 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/06 08:37:02 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/09 17:42:09 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
+	unsigned char	ch;
 	unsigned char	*ptr;
 	unsigned char	*find;
 
 	ptr = (unsigned char *)s;
-	find = NULL;
+	ch = (unsigned char)c;
+	find = (void *)s;
 	i = 0;
-	while((s!= NULL) && n > 0)
+	while (i < n)
 	{
-		if(ptr[i] != (unsigned char) c)
-		{
-			i++;
-			n--;
-		}
-		else
-		{
-			find = &ptr[i];
-			break;
-		}
+		if (ptr[i] == (unsigned char) c)
+			return (find + i);
+		i++;
 	}
-	return (find);
+	return (0);
 }

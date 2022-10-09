@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_toupper.c                                       :+:    :+:            */
+/*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:37:42 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/06 12:50:39 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/08 16:25:26 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/08 16:27:51 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c < 123 && c > 96)
-		c -= 32;
-	return (c);
+	while (*s)
+		write(fd, s++, 1);
 }

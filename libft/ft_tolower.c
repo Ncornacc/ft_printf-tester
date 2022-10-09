@@ -6,13 +6,13 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:42:16 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/04 16:43:24 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/06 12:50:19 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if(c > 64 && c < 91)
+	if (c > 64 && c < 91)
 		c += 32;
 	return (c);
 }

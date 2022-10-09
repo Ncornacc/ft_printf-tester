@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.c                                       :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 13:19:58 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/07 17:17:24 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/08 11:04:23 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/08 14:10:27 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*ptr;
 	size_t	i;
-	size_t	len;
+	size_t	j;
 
 	i = 0;
-	len = ft_strlen(src);
-	if (!n)
-		return (len);
-	while (i < n - 1 && src[i])
+	j = 0;
+	if (!s)
+		return (0);
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > 4294967295)
+		return (ft_strdup(s));
+	if (ft_strlen(s) < start + len)
+		len = ft_strlen(s);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (0);
+	while (s[i])
 	{
-		dest[i] = src[i];
+		if (i >= start && j < len)
+			ptr[j++] = s[i];
 		i++;
 	}
-	if (n < len)
-		dest[n - 1] = '\0';
-	else if (n != 0)
-		dest[i] = '\0';
-	return (len);
+	ptr[j] = '\0';
+	return (ptr);
 }

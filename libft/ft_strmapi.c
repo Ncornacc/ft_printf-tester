@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_toupper.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:37:42 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/06 12:50:39 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/09 16:32:23 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/09 16:53:36 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c < 123 && c > 96)
-		c -= 32;
-	return (c);
+	char			*ptr;
+	unsigned int	i;
+
+	i = 0;
+	if (!s || !f)
+		return (0);
+	ptr = (char *)malloc(ft_strlen(s) + 1);
+	if (!ptr)
+		return (0);
+	while (s[i])
+	{
+		ptr[i] = f(i, s[i]);
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

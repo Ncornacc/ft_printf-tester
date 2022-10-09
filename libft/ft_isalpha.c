@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 14:35:22 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/04 07:21:38 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/06 12:40:40 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,3 @@ int	ft_isalpha(int c)
 	else
 		return (1);
 }
-

@@ -6,24 +6,22 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:47:12 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/04 18:15:02 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/07 08:47:25 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*ptr;
-	
-	ptr = 0;
-	ptr = (char *)s;
-	while(ptr++)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*ptr == (char)c)
-		{
-			return (ptr);
-		}
-		if (!*ptr) 
-			return (0);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
 	}
-	return(0);
+	if (s[i] == (char)c)
+		return ((char *)s + i);
+	return (0);
 }

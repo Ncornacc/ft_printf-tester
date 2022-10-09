@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_toupper.c                                       :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:37:42 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/06 12:50:39 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/06 12:59:44 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/08 10:51:31 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	if (c < 123 && c > 96)
-		c -= 32;
-	return (c);
+	char		*ptr;
+	int			i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	ptr = (char *)malloc(i + 1);
+	if (s == (void *)0)
+		return (0);
+	if (!ptr)
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
