@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 09:00:29 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/07 13:24:42 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/10 13:26:02 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	k = 0;
 	n_len = ft_strlen(little);
 	ptr = (char *)big;
-	if (n_len == 0 || big == little)
+	if (n_len == 0)
 		return (ptr);
 	while (ptr[i] && len > 0)
 	{

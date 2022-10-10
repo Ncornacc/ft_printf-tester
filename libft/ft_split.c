@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/09 17:04:15 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/09 19:06:05 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/10 15:36:30 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/10 16:31:52 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	ft_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i])
+	while (s[i] && s)
 	{
 		while (s[i] == c)
 			i++;
@@ -31,15 +31,11 @@ static	int	ft_count(char const *s, char c)
 	return (count);
 }
 
-static	int	ft_len(char const *s, char c)
+static	int	ft_len(char const *s, char c, int i)
 {
-	int	i;
 	int	len;
 
-	i = 0;
 	len = 0;
-	while (s[i] == c)
-		i++;
 	while (s[i] != c && s[i])
 	{
 		len++;
@@ -48,51 +44,30 @@ static	int	ft_len(char const *s, char c)
 	return (len);
 }
 
-static	const char	*ft_fill(char *ptr, char const *s, char c)
-{
-	while (*s == c && *s)
-		s++;
-	while (*s != c && *s)
-	{
-		*ptr = *s;
-		s++;
-		ptr++;
-	}
-	*ptr = '\0';
-	return (s);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	int		word_num;
 	int		word_len;
+	int		word_num;
+	int		j;
+	int		i;
 
+	i = 0;
+	j = -1;
 	word_num = ft_count(s, c);
 	ptr = malloc(sizeof(char *) * (word_num + 1));
-	if (!ptr || !c)
+	if (!ptr)
 		return (0);
-	if (*s)
+	while (++j < word_num)
 	{
-		while (*s)
-		{
-			word_len = ft_len(s, c);
-			if (word_len)
-			{
-				*ptr = malloc(sizeof(char) * (word_len + 1));
-				if (!*ptr)
-					return (0);
-				s = ft_fill(*ptr, s, c);
-				ptr++;
-			}
-			s++;
-		}
-		*ptr = NULL;
+		while (s[i] == c)
+			i++;
+		word_len = ft_len(s, c, i);
+		ptr[j] = ft_substr(s, i, word_len);
+		if (!ptr)
+			return (0);
+		i += word_len;
 	}
-	else
-	{
-		ptr = 
-		return (ptr);
-	}
-	return (ptr - word_num);
+	ptr[j] = 0;
+	return (ptr);
 }
