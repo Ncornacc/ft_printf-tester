@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-SRCS	:=	ft_bzero.c		\
+SRCS	:=	ft_bzero.c	\
 		ft_memcpy.c		\
 		ft_memmove.c 	\
 		ft_memchr.c		\
