@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/08 12:20:59 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/08 12:40:57 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/13 17:53:45 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ptr;
 
 	if (!s1 && !s2)
-		return (ft_strdup(""));
+		return (NULL);
 	if (!s1 && s2)
 		return (ft_strdup(s2));
 	if (s1 && !s2)

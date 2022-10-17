@@ -6,7 +6,7 @@
 #    By: ncornacc <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/11 11:34:37 by ncornacc      #+#    #+#                  #
-#    Updated: 2022/10/11 12:22:28 by ncornacc      ########   odam.nl          #
+#    Updated: 2022/10/13 17:51:35 by ncornacc      ########   odam.nl          #
 #                                                                              #
 #******************************************************************************#
 
@@ -45,8 +45,16 @@ SRCS	:=	ft_bzero.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c
 
-SRCSB	:=	ft_*_bonus.c \
-		$(SRCS)
+SRCSB	:=	ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c	\
+			ft_lstlast_bonus.c	\
+			ft_lstadd_back_bonus.c	\
+			ft_lstdelone_bonus.c	\
+			ft_lstclear_bonus.c	\
+			ft_lstiter_bonus.c	\
+			ft_lstmap_bonus.c	\
+			$(SRCS)
 
 OBJSB	:=	${SRCSB:.c=.o}
 
@@ -64,7 +72,6 @@ AR		:=	ar
 
 ${NAME}:	${OBJS}
 	${AR} -rc $@	$^
-	${RM}	${OBJS}
 
 all:	${NAME}
 

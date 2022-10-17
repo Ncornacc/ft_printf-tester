@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/08 11:04:23 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/10 16:32:19 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/13 17:56:10 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > 4294967295)
 		return (ft_strdup(s));
 	if (ft_strlen(s) < start + len)
-		len = ft_strlen(s);
+		len = ft_strlen(s + start);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (0);
