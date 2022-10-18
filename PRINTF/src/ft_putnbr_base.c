@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_toupper.c                                       :+:    :+:            */
+/*   ft_putnbr_base.c                                      :+:    :+:         */
 /*                                                     +:+                    */
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:37:42 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/06 12:50:39 by ncornacc      ########   odam.nl         */
+/*   Created: 2022/10/17 13:35:33 by ncornacc      #+#    #+#                 */
+/*   Updated: 2022/10/17 14:12:05 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "ft_printf.h"
+
+void	ft_putnbr_base(unsigned int n, char *s, int *len)
 {
-	if (c < 123 && c > 96)
-		c -= 32;
-	return (c);
+	unsigned int	base_len;
+
+	base_len = 0;
+	while (s[base_len])
+		base_len++;
+	if (n > base_len - 1)
+	{
+		ft_putnbr_ul(n / base_len, s, len);
+		n %= base_len;
+	}
+	ft_putchar(s[n], len);
 }
