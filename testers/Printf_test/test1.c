@@ -6,7 +6,7 @@
 /*   By: ncornac <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   created: 2022/10/18 13:53:19 by ncornac      #+#    #+#                 */
-/*   Updated: 2022/10/18 13:53:20 by ncornac      ########   odam.nl         */
+/*   Updated: 2022/10/25 11:28:53 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <stdio.h>
 
 int main()
-{
-
+{   
+    ft_printf("--------------------------------------\n");
+    ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %c###############*/
         ft_printf("TESTER FOR /%/c\n");
         if (ft_printf(" %c \n", 'a') != printf(" %c \n", 'a'))
@@ -56,6 +57,7 @@ int main()
 
     /*###########################################*/
     ft_printf("--------------------------------------\n");
+    ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %S###############*/
         ft_printf("TESTER FOR /%/s\n");
 
@@ -91,6 +93,7 @@ int main()
 
 
     /*###########################################*/
+    ft_printf("--------------------------------------\n");
     ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %P###############*/
     ft_printf("TESTER FOR /%/P\n");
@@ -140,6 +143,7 @@ int main()
 
     /*###########################################*/
     ft_printf("--------------------------------------\n");
+    ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %D/I#############*/
         ft_printf("TESTER FOR /%/d i\n");
 
@@ -180,6 +184,7 @@ int main()
         ft_printf("\n");
         
         ft_printf("--------------------------------------\n");
+        ft_printf("--------------------------------------\n");
 
         if (ft_printf(" %i \n", -42) != printf(" %i \n", -42))
             return (1);
@@ -218,6 +223,7 @@ int main()
         ft_printf("\n");
         
     /*###########################################*/
+    ft_printf("--------------------------------------\n");
     ft_printf("--------------------------------------\n");
      /*###############TESTER FOR %U###############*/
      ft_printf("TESTER FOR U\n");
@@ -276,6 +282,8 @@ int main()
             ft_printf("OK!\n");
         ft_printf("\n");
     /*###########################################*/
+    ft_printf("--------------------------------------\n");
+    ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %x###############*/
     ft_printf("TESTER FOR x\n");
 
@@ -334,6 +342,7 @@ int main()
         ft_printf("\n");
     /*###########################################*/
     ft_printf("--------------------------------------\n");
+    ft_printf("--------------------------------------\n");
     /*###############TESTER FOR %x/X###############*/
     ft_printf("TESTER FOR X\n");
 
@@ -384,8 +393,23 @@ int main()
         else   
             ft_printf("OK!\n");
         ft_printf("\n");
-        ft_printf("All test passed!!!!");
-        
+		ft_printf("--------------------------------BAD CASE----------------------------------------------");
+        ft_printf("\n");
+        ft_printf("OUTPUT OF PERCENTAGE x3\n");
+        int noom = ft_printf("%%%");
+        printf("\n");
+        int moon = printf("%%%");
+        printf("\n");
+        ft_printf("RETURN VALUE OF PERCENTAGE x3\n");
+        ft_printf ("%d \n", noom);
+        printf ("%d \n", moon);
 
-
+        ft_printf("OUTPUT OF PERCENTAGE x3 and backslash zero\n");
+        int alpha = ft_printf("%%%\0abc");
+        printf("\n");
+        int beta = printf("%%%\0abc");
+        printf("\n");
+        ft_printf("RETURN VALUE OF PERCENTAGE x3 and backslash zero\n");
+        ft_printf ("%d \n", alpha);
+        printf ("%d \n", beta);
 }
