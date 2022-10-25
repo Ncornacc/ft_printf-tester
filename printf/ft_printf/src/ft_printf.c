@@ -6,7 +6,7 @@
 /*   By: ncornacc <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 12:04:13 by ncornacc      #+#    #+#                 */
-/*   Updated: 2022/10/25 15:01:58 by ncornacc      ########   odam.nl         */
+/*   Updated: 2022/10/25 15:08:07 by ncornacc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	ft_printf(const	char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
-			ft_printk(format, args, i++, len);
+		{
+			i++;
+			ft_printk(format, args, i, len);
+		}
 		else if (format[i] != '%')
 			ft_putchar(format[i], len);
 		i++;
